@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { handleInboundMessage } from "../handlers/message";
 
 const router = Router();
 
