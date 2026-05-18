@@ -4,7 +4,7 @@ import { handleInboundMessage } from "../handlers/message";
 const router = Router();
 
 router.get('/webhook', (req: Request, res: Response) => {
-    const mode = req.query['hub-mode'];
+    const mode = req.query['hub.mode'];
     const token = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
 

@@ -4,8 +4,9 @@ import { SuitAnalysis } from '../types';
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY! });
 
 export async function observeSuit(imageBuffer: Buffer): Promise<SuitAnalysis | { error: string }> {
+    console.log('[observer] sending image to gemini-2.5-flash for analysis...');
     const response = await ai.models.generateContent({
-        model: 'gemini-1.5-flash',
+        model: 'gemini-2.5-flash',
         contents: [
             {
                 role: 'user',

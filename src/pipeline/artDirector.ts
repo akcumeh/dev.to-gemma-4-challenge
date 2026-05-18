@@ -47,6 +47,8 @@ export async function buildPrompt(
     if (suit.hasBelt) structureNotes.push(SUIT_ANATOMY.hasBelt);
     if (suit.hasNoJacket) structureNotes.push(SUIT_ANATOMY.hasNoJacket);
 
+    console.log(`[artDirector] picked variant: ${JSON.stringify(variant)}`);
+    console.log('[artDirector] sending to gemma-4-31b-it for prompt engineering...');
     const response = await ai.models.generateContent({
         model: 'gemma-4-31b-it',
         contents: [
